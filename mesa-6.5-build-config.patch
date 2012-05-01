@@ -1,0 +1,12 @@
+--- ./configs/linux.build-config	2006-04-03 18:13:19.000000000 -0400
++++ ./configs/linux	2006-04-03 18:13:47.000000000 -0400
+@@ -8,6 +8,9 @@
+ CC = gcc
+ CXX = g++
+ 
++MKDEP = gcc -M -MG
++MKDEP_OPTIONS = -MF depend
++
+ OPT_FLAGS  = -O3 -g
+ PIC_FLAGS  = -fPIC
+ 

@@ -1,0 +1,26 @@
+--- Mesa-6.5.1/configs/default.motif	2006-09-28 13:04:05.000000000 +0200
++++ Mesa-6.5.1/configs/default	2006-09-28 13:04:37.000000000 +0200
+@@ -55,12 +55,12 @@
+ 
+ # GLw widget sources (Append "GLwMDrawA.c" here and add -lXm to GLW_LIB_DEPS in
+ # order to build the Motif widget too)
+-GLW_SOURCES = GLwDrawA.c
++GLW_SOURCES = GLwDrawA.c GLwMDrawA.c
+ 
+ 
+ # Directories to build
+ LIB_DIR = lib
+-SRC_DIRS = mesa glu glut/glx glw
++SRC_DIRS = glw
+ GLU_DIRS = sgi
+ DRIVER_DIRS = x11 osmesa
+ # Which subdirs under $(TOP)/progs/ to enter:
+@@ -73,7 +73,7 @@
+ OSMESA_LIB_DEPS = -L$(TOP)/$(LIB_DIR) -l$(GL_LIB)
+ GLU_LIB_DEPS = -L$(TOP)/$(LIB_DIR) -l$(GL_LIB) -lm
+ GLUT_LIB_DEPS = -L$(TOP)/$(LIB_DIR) -l$(GLU_LIB) -l$(GL_LIB) $(EXTRA_LIB_PATH) -lX11 -lXmu -lXt -lXi -lm
+-GLW_LIB_DEPS = -L$(TOP)/$(LIB_DIR) -l$(GL_LIB) $(EXTRA_LIB_PATH) -lXt -lX11
++GLW_LIB_DEPS = -l$(GL_LIB) -lXt -lX11
+ APP_LIB_DEPS = -L$(TOP)/$(LIB_DIR) -l$(GLUT_LIB) -l$(GLU_LIB) -l$(GL_LIB) -lm
+ 
+ 
